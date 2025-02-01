@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Input Form</title>
+    <style>
+        
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: 'Times New Roman', Times, serif, sans-serif;
+            background-color: #f4f4f4;
+        }
+
+       
+        .form-container {
+            width: 85%;
+            height: 40%;
+            text-align: center;
+            padding: 150px 20px 20px 20px;
+            background-color: rgb(240, 133, 195);
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        
+        label {
+            font-size: 16px;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        input {
+            padding: 10px;
+            font-size: 14px;
+            margin-bottom: 15px;
+            width: 250px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #4caf54;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="form-container">
+        <h2>Enter Your Trip Details</h2>
+        <div>
+            <label for="destination">Please enter the place you want to go:</label>
+            <input type="text" id="destination" name="destination" placeholder="Enter destination">
+        </div>
+        <div>
+            <label for="exit-time">Exit time (when you leave home):</label>
+            <input type="time" id="exit-time" name="exit-time">
+        </div>
+        <div>
+            <label for="arrival-time">Arrival time (when you reach destination):</label>
+            <input type="time" id="arrival-time" name="arrival-time">
+        </div>
+        <div>
+            <button onclick="window.location.href='nextPage.html'">Go</button>
+        </div>
+    </div>
+
+    <script>
+        function validateForm() {
+            var destination = document.getElementById("destination").value;
+            var exitTime = document.getElementById("exit-time").value;
+            var arrivalTime = document.getElementById("arrival-time").value;
+            if (destination === "" || exitTime === "" || arrivalTime === "") {
+                document.getElementById("error-message").style.display = "block";
+            } else {
+                document.getElementById("error-message").style.display = "none";
+                window.location.href = "nextPage.html";
+            }
+        }
+    </script>
+
+
+</body>
+</html>
